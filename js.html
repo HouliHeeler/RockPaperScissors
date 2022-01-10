@@ -1,0 +1,94 @@
+let playerTally = 0;
+let computerTally = 0;
+const playerTallyPara = document.getElementById("playertally");
+const computerTallyPara = document.getElementById("computertally");
+
+function playerRock() {
+    const choices = ["img/rock.jpg", "img/paper.jpg", "img/scissors.jpg"];
+    const random = Math.floor(Math.random() * choices.length);
+    document.getElementById("playertwo").src=(choices[random]);
+    if (random == "0") {
+        document.getElementById("result").innerHTML = "Draw!";
+    }
+    else if (random == "1") {
+        document.getElementById("result").innerHTML = "Loser!";
+        computerTally++;
+        computerTallyPara.textContent = `${computerTally}`;
+        if (computerTally == "5") {
+            confirm("Defeat!");
+        }
+    }
+    else {
+        document.getElementById("result").innerHTML = "Winner!";
+        playerTally++;
+        playerTallyPara.textContent = `${playerTally}`;
+        if (playerTally == "5") {
+            confirm("Victory!");
+        }
+    }
+}
+
+function playerPaper() {
+    const choices = ["img/rock.jpg", "img/paper.jpg", "img/scissors.jpg"];
+    const random = Math.floor(Math.random() * choices.length);
+    document.getElementById("playertwo").src=(choices[random]);
+    if (random == "0") {
+        document.getElementById("result").innerHTML = "Winner";
+        playerTally++;
+        playerTallyPara.textContent = `${playerTally}`;
+        if (playerTally == "5") {
+            confirm("Victory!");
+        }
+    }
+    else if (random == "1") {
+        document.getElementById("result").innerHTML = "Draw!";
+    }
+    else {
+        document.getElementById("result").innerHTML = "Loser!";
+        computerTally++;
+        computerTallyPara.textContent = `${computerTally}`;
+        if (computerTally == "5") {
+            confirm("Defeat!");
+        }
+    }
+}
+
+function playerScissors() {
+    const choices = ["img/rock.jpg", "img/paper.jpg", "img/scissors.jpg"];
+    const random = Math.floor(Math.random() * choices.length);
+    document.getElementById("playertwo").src=(choices[random]);
+    if (random == "0") {
+        document.getElementById("result").innerHTML = "Loser!";
+        computerTally++;
+        computerTallyPara.textContent = `${computerTally}`;
+        if (computerTally == "5") {
+            confirm("Defeat!");
+        }
+    }
+    else if (random == "1") {
+        document.getElementById("result").innerHTML = "Winner!";
+        playerTally++;
+        playerTallyPara.textContent = `${playerTally}`;
+        if (playerTally == "5") {
+            confirm("Victory!");
+        }
+    }
+    else {
+        document.getElementById("result").innerHTML = "Draw!";
+    }
+}
+
+function rock() {
+    document.getElementById("playerone").src="img/rock.jpg";
+    playerRock();
+}
+
+function paper() {
+    document.getElementById("playerone").src="img/paper.jpg";
+    playerPaper();
+}
+
+function scissors() {
+    document.getElementById("playerone").src="img/scissors.jpg";
+    playerScissors();
+}
